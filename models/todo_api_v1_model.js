@@ -5,10 +5,10 @@ const getAllTask = result => {
     sql.query("SELECT * FROM todo_api", (err, res) => {
         if (err) {
             console.log("err:", err)
-            result(null, err)
+            result(err, null)
             return
         }
-        result(res, null)
+        result(null, res)
     })
 }
 

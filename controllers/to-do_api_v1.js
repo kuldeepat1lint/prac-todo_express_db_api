@@ -12,10 +12,10 @@ class ToDo {
 const getAllTask = (req, res) => {
     model.getAllTask((err, result) => {
         if (err) {
-            return res.status(200).json({ status: "failed", data: err, msg: "something went wrong" })
+            return res.status(500).json({ status: "failed", data: err, msg: "something went wrong" })
         }
         else {
-            return res.status(500).json({ status: "success", data: result })
+            return res.status(200).json({ status: "success", data: result })
         }
     })
 }
